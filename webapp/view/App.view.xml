@@ -1,7 +1,73 @@
 <mvc:View controllerName="com.exa.alfanar.controller.App"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:cc="com.exa.alfanar.controls" 
+    xmlns:core="sap.ui.core" 
+    xmlns:c="sap.suite.ui.commons">
+
     <App id="app">
+        <Page id="page" showHeader="false">
+            <content>
+                <VBox class="gridContainer">
+                    
+                    <!-- Side Navigation -->
+                    <VBox id="sideNav" class="sideNav">
+                        
+                        <!-- TOP NAV ITEMS -->
+                        <cc:VBox class="sideNavItems" key="Dashboard" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://product"></core:Icon>
+                            <Label text="Product Catalogue" textAlign="Center"> </Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="IN" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://activity-items"></core:Icon>
+                            <Label text="Enquiry"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="CC" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://sales-quote"></core:Icon>
+                            <Label text="Customer Creation" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="QT" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://sales-quote"></core:Icon>
+                            <Label text="Quotation" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="OR" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://sales-order"></core:Icon>
+                            <Label text="Sales Order" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="LF" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://shipping-status"></core:Icon>
+                            <Label text="Delivery" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="F2" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://simple-payment"></core:Icon>
+                            <Label text="Invoice" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="TrackOrder" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://activities"></core:Icon>
+                            <Label text="Analysis" wrapping="true" textAlign="Center"></Label>
+                        </cc:VBox>
+
+                        <!-- SPACER for adding extra space -->
+                        <VBox class="sideNavSpacer"></VBox>
+
+                        <!-- BOTTOM NAV ITEMS -->
+                        <VBox class="sideNavBottom">
+                            <cc:VBox class="sideNavItems" key="Help" press="onSideNavItemSelection">
+                                <core:Icon src="sap-icon://question-mark"></core:Icon>
+                                <Label text="Help"></Label>
+                            </cc:VBox>
+                            <cc:VBox class="sideNavItems" key="Settings" press="onSideNavItemSelection">
+                                <core:Icon src="sap-icon://action-settings"></core:Icon>
+                                <Label text="Settings"></Label>
+                            </cc:VBox>
+                        </VBox>
+
+                    </VBox>
+
+                </VBox>
+            </content>
+        </Page>
     </App>
+
 </mvc:View>

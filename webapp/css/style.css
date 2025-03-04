@@ -1,1 +1,92 @@
-/* Enter your custom styles here */
+.gridContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.sideNav {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 4px;
+    padding-top: 10px;
+    min-width: 55px; /* Compact width */
+    background-color: #000;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+/* Individual Navigation Items */
+.sideNavItems {
+    padding: 4.5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.sideNavItems:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Adjusted label for text wrapping */
+.sideNavItems .sapMLabel {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 3px;
+    line-height: 1.2;
+    max-width: 50px; /* Allow text to wrap */
+    white-space: normal; /* Enable text wrapping */
+    word-break: break-word; /* Break long words if needed */
+}
+
+/* Selected Item Styling */
+.sideNavItemSelected {
+    background-color: white;
+    color: black !important;
+    border-radius: 8px;
+}
+
+.sideNavItemSelected .sapMLabel {
+    color: black !important;
+}
+
+.sideNavItemSelected .sapUiIcon {
+    color: black !important;
+}
+
+/* Adjust icon size (smaller) */
+.sapUiIcon {
+    font-size: 14px !important; /* Reduced size */
+}
+
+/* Bottom Section */
+.sideNavBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px; /* Increased space between bottom icons */
+    width: 100%;
+}
+
+/* Added more space before help and settings icons */
+.sideNavBottom .sideNavItems {
+    padding: 8px 0;
+}
+
+/* Extra space between "Analysis" and help icons */
+/* Extra space between "Analysis" and bottom items */
+.sideNavSpacer {
+    flex-grow: 1; /* Pushes bottom items down */
+    min-height: 30px; /* Adjust height as needed */
+    width: 100%;
+}
