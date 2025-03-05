@@ -74,33 +74,21 @@
       ]
     },
     "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
-        "viewType": "XML",
-        "path": "com.exa.alfanar.view",
-        "async": true,
-        "viewPath": "com.exa.alfanar.view"
-      },
-      "routes": [
-        {
-          "name": "RouteHome",
-          "pattern": ":?query:",
-          "target": [
-            "TargetHome"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetHome": {
-          "id": "Home",
-          "name": "Home"
-        }
-      }
-    },
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "controlAggregation": "pages",
+    "controlId": "app",
+    "transition": "slide",
+    "type": "View",
+    "viewType": "XML",
+    "viewPath": "com.exa.alfanar.view",
+    "async": true
+  },
+  "routes": [],
+  "targets": {}
+},
+
+
     "rootView": {
       "viewName": "com.exa.alfanar.view.App",
       "type": "XML",
