@@ -3,21 +3,16 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:cc="com.exa.alfanar.controls" 
-    xmlns:core="sap.ui.core" 
-    xmlns:c="sap.suite.ui.commons">
+    xmlns:core="sap.ui.core">
 
     <App id="app">
         <Page id="page" showHeader="false">
             <content>
                 <VBox class="gridContainer">
-                    
-                    <!-- Side Navigation -->
                     <VBox id="sideNav" class="sideNav">
-                        
-                        <!-- TOP NAV ITEMS -->
                         <cc:VBox class="sideNavItems" key="Dashboard" press="onSideNavItemSelection">
                             <core:Icon src="sap-icon://product"></core:Icon>
-                            <Label text="Product Catalogue" textAlign="Center"> </Label>
+                            <Label text="Product Catalogue" textAlign="Center"></Label>
                         </cc:VBox>
                         <cc:VBox class="sideNavItems" key="IN" press="onSideNavItemSelection">
                             <core:Icon src="sap-icon://activity-items"></core:Icon>
@@ -48,21 +43,21 @@
                             <Label text="Analysis" wrapping="true" textAlign="Center"></Label>
                         </cc:VBox>
 
-                        <!-- SPACER for adding extra space -->
                         <VBox class="sideNavSpacer"></VBox>
 
-                        <!-- BOTTOM NAV ITEMS -->
-                        <VBox class="sideNavBottom">
-                            <cc:VBox class="sideNavItems" key="Help" press="onSideNavItemSelection">
-                                <core:Icon src="sap-icon://question-mark"></core:Icon>
-                                <Label text="Help"></Label>
-                            </cc:VBox>
-                            <cc:VBox class="sideNavItems" key="Settings" press="onSideNavItemSelection">
-                                <core:Icon src="sap-icon://action-settings"></core:Icon>
-                                <Label text="Settings"></Label>
-                            </cc:VBox>
-                        </VBox>
+                        <cc:VBox class="sideNavItems" key="Help" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://question-mark"></core:Icon>
+                            <Label text="Help"></Label>
+                        </cc:VBox>
+                        <cc:VBox class="sideNavItems" key="Settings" press="onSideNavItemSelection">
+                            <core:Icon src="sap-icon://action-settings"></core:Icon>
+                            <Label text="Settings"></Label>
+                        </cc:VBox>
 
+                    </VBox>
+
+                    <VBox class="mainContainer">
+                        <NavContainer id="navContainer" class="navContainer"></NavContainer>
                     </VBox>
 
                 </VBox>

@@ -19,6 +19,7 @@
     left: 0;
     overflow: hidden;
     justify-content: space-between;
+    z-index: 100; /* Ensure it stays above other content */
 }
 
 /* Individual Navigation Items */
@@ -31,10 +32,26 @@
     width: 100%;
     border-radius: 8px;
     transition: background 0.3s ease;
+    cursor: pointer; /* Add pointer cursor for better UX */
 }
 
 .sideNavItems:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Selected state - updated class name to match the one we'll use in JavaScript */
+.sideNavItems.selected {
+    background-color: white;
+    color: black !important;
+    border-radius: 8px;
+}
+
+.sideNavItems.selected .sapMLabel {
+    color: black !important;
+}
+
+.sideNavItems.selected .sapUiIcon {
+    color: black !important;
 }
 
 /* Adjusted label for text wrapping */
@@ -49,23 +66,8 @@
     word-break: break-word; /* Break long words if needed */
 }
 
-/* Selected Item Styling */
-.sideNavItemSelected {
-    background-color: white;
-    color: black !important;
-    border-radius: 8px;
-}
-
-.sideNavItemSelected .sapMLabel {
-    color: black !important;
-}
-
-.sideNavItemSelected .sapUiIcon {
-    color: black !important;
-}
-
 /* Adjust icon size (smaller) */
-.sapUiIcon {
+.sideNavItems .sapUiIcon {
     font-size: 14px !important; /* Reduced size */
 }
 
@@ -83,10 +85,28 @@
     padding: 8px 0;
 }
 
-/* Extra space between "Analysis" and help icons */
 /* Extra space between "Analysis" and bottom items */
 .sideNavSpacer {
     flex-grow: 1; /* Pushes bottom items down */
     min-height: 30px; /* Adjust height as needed */
     width: 100%;
+}
+
+.mainContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    margin-left: 55px; /* Add margin to account for fixed sidebar width */
+    width: calc(100% - 55px); /* Adjust width to account for sidebar */
+}
+
+.navContainer {
+    height: calc(100vh - 4rem);
+    margin: 9px;
+    width: calc(100% - 18px) !important;
+}
+
+.navContainer.sapMNav {
+    border-radius: 8px;
 }

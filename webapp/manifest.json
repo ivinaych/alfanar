@@ -51,7 +51,8 @@
       "minUI5Version": "1.133.0",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.suite.ui.commons": {}
       }
     },
     "contentDensities": {
@@ -64,6 +65,12 @@
         "settings": {
           "bundleName": "com.exa.alfanar.i18n.i18n"
         }
+      },
+      "oCreateModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "oUserModel": {
+        "type": "sap.ui.model.json.JSONModel"
       }
     },
     "resources": {
@@ -74,21 +81,110 @@
       ]
     },
     "routing": {
-  "config": {
-    "routerClass": "sap.m.routing.Router",
-    "controlAggregation": "pages",
-    "controlId": "app",
-    "transition": "slide",
-    "type": "View",
-    "viewType": "XML",
-    "viewPath": "com.exa.alfanar.view",
-    "async": true
-  },
-  "routes": [],
-  "targets": {}
-},
-
-
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.exa.alfanar.view",
+        "controlId": "navContainer",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Dashboard",
+          "target": "Dashboard"
+        },
+        {
+          "pattern": "IN",
+          "name": "IN",
+          "target": "IN"
+        },
+        {
+          "pattern": "CC",
+          "name": "CC",
+          "target": "CC"
+        },
+        {
+          "pattern": "QT",
+          "name": "QT",
+          "target": "QT"
+        },
+        {
+          "pattern": "OR",
+          "name": "OR",
+          "target": "OR"
+        },
+        {
+          "pattern": "LF",
+          "name": "LF",
+          "target": "LF"
+        },
+        {
+          "pattern": "F2",
+          "name": "F2",
+          "target": "F2"
+        },
+        {
+          "pattern": "TrackOrder",
+          "name": "TrackOrder",
+          "target": "TrackOrder"
+        },
+        {
+          "pattern": "Help",
+          "name": "Help",
+          "target": "Help"
+        },
+        {
+          "pattern": "Settings",
+          "name": "Settings",
+          "target": "Settings"
+        }
+      ],
+      "targets": {
+        "Dashboard": {
+          "viewId": "DashboardPage",
+          "viewName": "Dashboard"
+        },
+        "IN": {
+          "viewId": "INPage",
+          "viewName": "IN"
+        },
+        "CC": {
+          "viewId": "CCPage",
+          "viewName": "CC"
+        },
+        "QT": {
+          "viewId": "QTPage",
+          "viewName": "QT"
+        },
+        "OR": {
+          "viewId": "ORPage",
+          "viewName": "OR"
+        },
+        "LF": {
+          "viewId": "LFPage",
+          "viewName": "LF"
+        },
+        "F2": {
+          "viewId": "F2Page",
+          "viewName": "F2"
+        },
+        "TrackOrder": {
+          "viewId": "TrackOrderPage",
+          "viewName": "TrackOrder"
+        },
+        "Help": {
+          "viewId": "HelpPage",
+          "viewName": "Help"
+        },
+        "Settings": {
+          "viewId": "SettingsPage",
+          "viewName": "Settings"
+        }
+      }
+    },
     "rootView": {
       "viewName": "com.exa.alfanar.view.App",
       "type": "XML",

@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="com.exa.alfanar.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Product Catalogue" showHeader="true">
+        <content>
+            <!-- Your dashboard content here -->
+            <VBox class="sapUiMediumMargin">
+                <Title text="Product Catalogue" level="H1" />
+                <Text text="Welcome to the Product Catalogue dashboard" class="sapUiSmallMarginTop" />
+                
+                <!-- Add your dashboard content here -->
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
