@@ -1,113 +1,14 @@
 <mvc:View
     controllerName="com.exa.alfanar.controller.IN"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:f="sap.f"
-    xmlns:core="sap.ui.core">
-    <Page id="enquiryPage" title="Enquiry" showHeader="true">
+    xmlns="sap.m">
+    <Page title="Enquiry" showHeader="true">
         <content>
-            <f:DynamicPage headerExpanded="true" toggleHeaderOnTitleClick="true">
-                <f:title>
-                    <f:DynamicPageTitle>
-                        <f:heading>
-                            <Title text="Enquiry Management"/>
-                        </f:heading>
-                        <f:actions>
-                            <Button text="Create New Enquiry" type="Emphasized" press="onCreateEnquiry"/>
-                        </f:actions>
-                    </f:DynamicPageTitle>
-                </f:title>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Enquiry" level="H1" />
+                <Text text="Welcome to the Enquiry Page" class="sapUiSmallMarginTop" />
                 
-                <f:header>
-                    <f:DynamicPageHeader pinnable="true">
-                        <VBox>
-                            <Panel expandable="true" expanded="true" headerText="Filters">
-                                <content>
-                                    <form:SimpleForm 
-                                        layout="ResponsiveGridLayout"
-                                        editable="true"
-                                        xmlns:form="sap.ui.layout.form">
-                                        <form:content>
-                                            <Label text="Enquiry ID"/>
-                                            <Input id="filterEnquiryId"/>
-                                            
-                                            <Label text="Date Range"/>
-                                            <DateRangeSelection id="filterDateRange"/>
-                                            
-                                            <Label text="Status"/>
-                                            <Select id="filterStatus">
-                                                <items>
-                                                    <core:Item key="" text="All"/>
-                                                    <core:Item key="NEW" text="New"/>
-                                                    <core:Item key="INPROCESS" text="In Process"/>
-                                                    <core:Item key="COMPLETED" text="Completed"/>
-                                                </items>
-                                            </Select>
-                                        </form:content>
-                                    </form:SimpleForm>
-                                    <HBox justifyContent="End">
-                                        <Button text="Apply Filters" type="Emphasized" press="onApplyFilters"/>
-                                        <Button text="Reset" class="sapUiSmallMarginBegin" press="onResetFilters"/>
-                                    </HBox>
-                                </content>
-                            </Panel>
-                        </VBox>
-                    </f:DynamicPageHeader>
-                </f:header>
-                
-                <f:content>
-                    <Table id="enquiryTable"
-                           items="{/Enquiries}"
-                           growing="true"
-                           growingThreshold="10"
-                           growingScrollToLoad="true">
-                        <columns>
-                            <Column width="12em">
-                                <Text text="Enquiry ID"/>
-                            </Column>
-                            <Column width="12em">
-                                <Text text="Created Date"/>
-                            </Column>
-                            <Column width="12em">
-                                <Text text="Customer"/>
-                            </Column>
-                            <Column minScreenWidth="Tablet" demandPopin="true">
-                                <Text text="Product Category"/>
-                            </Column>
-                            <Column width="10em">
-                                <Text text="Status"/>
-                            </Column>
-                            <Column hAlign="End">
-                                <Text text="Actions"/>
-                            </Column>
-                        </columns>
-                        <items>
-                            <ColumnListItem type="Navigation" press="onEnquiryItemPress">
-                                <cells>
-                                    <ObjectIdentifier title="{EnquiryId}"/>
-                                    <Text text="{path: 'CreatedDate', formatter: '.formatter.formatDate'}"/>
-                                    <Text text="{CustomerName}"/>
-                                    <Text text="{ProductCategory}"/>
-                                    <ObjectStatus text="{Status}" state="{path: 'Status', formatter: '.formatter.formatStatusState'}"/>
-                                    <HBox>
-                                        <Button icon="sap-icon://edit" press="onEditEnquiry" type="Transparent"/>
-                                        <Button icon="sap-icon://attachment" press="onViewAttachments" type="Transparent"/>
-                                        <Button icon="sap-icon://decline" press="onDeleteEnquiry" type="Transparent"/>
-                                    </HBox>
-                                </cells>
-                            </ColumnListItem>
-                        </items>
-                    </Table>
-                </f:content>
-            </f:DynamicPage>
+            </VBox>
         </content>
-        <footer>
-            <Toolbar>
-                <content>
-                    <ToolbarSpacer/>
-                    <Text id="tableCount" text="Enquiries: {= ${/Enquiries}.length || 0}"/>
-                </content>
-            </Toolbar>
-        </footer>
     </Page>
 </mvc:View>
