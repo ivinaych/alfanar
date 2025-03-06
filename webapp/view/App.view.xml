@@ -64,6 +64,9 @@
                         </VBox>
 
                     </VBox>
+                    <VBox class="mainContainer">
+						<NavContainer id="navContainer" class="navContainer"></NavContainer>
+					</VBox>
 
                 </VBox>
             </content>
