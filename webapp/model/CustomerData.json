@@ -1,0 +1,80 @@
+{
+    "customers": [
+      {
+        "customerId": "C001",
+        "customerAccountGroup": "A1",
+        "requestId": "R123",
+        "customerNameEn": "John Doe",
+        "countryCode": "US",
+        "mobileNo": "+1234567890",
+        "postalCode": "12345",
+        "city": "New York",
+        "salesOrg": "1000",
+        "Distributionchannel": "Online",
+        "Division": "Retail",
+        "SalesOffice": "Office1",
+        "lastupdate": "2025-03-10"
+      },
+      {
+        "customerId": "C002",
+        "customerAccountGroup": "B2",
+        "requestId": "R124",
+        "customerNameEn": "Jane Smith",
+        "countryCode": "UK",
+        "mobileNo": "+447123456789",
+        "postalCode": "56789",
+        "city": "London",
+        "salesOrg": "2000",
+        "Distributionchannel": "Retail",
+        "Division": "Wholesale",
+        "SalesOffice": "Office2",
+        "lastupdate": "2025-03-11"
+      },
+      {
+        "customerId": "CUST001",
+        "customerAccountGroup": "AG001",
+        "requestId": "REQ001",
+        "customerNameEn": "John Doe Enterprises",
+        "countryCode": "US",
+        "mobileNo": "+1 9876543210",
+        "postalCode": "10001",
+        "city": "New York",
+        "salesOrg": "SO100",
+        "Distributionchannel": "D01",
+        "Division": "DIV01",
+        "SalesOffice": "SOFF01",
+        "lastupdate": "2024-03-12"
+      },
+      {
+        "customerId": "CUST002",
+        "customerAccountGroup": "AG002",
+        "requestId": "REQ002",
+        "customerNameEn": "Smith Supplies",
+        "countryCode": "UK",
+        "mobileNo": "+44 1234567890",
+        "postalCode": "SW1A 1AA",
+        "city": "London",
+        "salesOrg": "SO200",
+        "Distributionchannel": "D02",
+        "Division": "DIV02",
+        "SalesOffice": "SOFF02",
+        "lastupdate": "2024-03-10"
+      },
+      {
+        "customerId": "CUST003",
+        "customerAccountGroup": "AG003",
+        "requestId": "REQ003",
+        "customerNameEn": "Alfanar Trading",
+        "countryCode": "SA",
+        "mobileNo": "+966 543210987",
+        "postalCode": "11564",
+        "city": "Riyadh",
+        "salesOrg": "SO300",
+        "Distributionchannel": "D03",
+        "Division": "DIV03",
+        "SalesOffice": "SOFF03",
+        "lastupdate": "2024-03-08"
+      }
+    ]
+  }
+  

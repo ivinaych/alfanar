@@ -69,6 +69,14 @@
       "oCreateModel": {
         "type": "sap.ui.model.json.JSONModel"
       },
+     
+      "customerData": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          "uri": "model/customerData.json"
+        }
+      },
+
       "oUserModel": {
         "type": "sap.ui.model.json.JSONModel"
       }
@@ -140,7 +148,17 @@
           "pattern": "Settings",
           "name": "Settings",
           "target": "Settings"
-        }
+        },
+        {
+          "pattern": "list/{module}",
+          "name": "ListPage",
+          "target": "ListPage"
+        },
+        {
+          "pattern": "CustomerUpdate",
+          "name": "CustomerUpdate",
+          "target": "CustomerUpdate"
+        }        
       ],
       "targets": {
         "Dashboard": {
@@ -182,6 +200,14 @@
         "Settings": {
           "viewId": "SettingsPage",
           "viewName": "Settings"
+        },
+        "ListPage": {
+          "viewId": "ListPage",
+          "viewName": "ListPage"
+        },
+        "CustomerUpdate":{
+          "viewId": "CustomerUpdate",
+          "viewName": "CustomerUpdate"
         }
       }
     },

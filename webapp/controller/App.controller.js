@@ -36,13 +36,18 @@ sap.ui.define([
         },
   
         onSideNavItemSelection: function (oEvent) {
-            // Get the selected key from the custom control
             var oSource = oEvent.getSource();
             var sKey = oSource.getProperty("key");
-  
-            // Navigate to the corresponding route
-            this._router.navTo(sKey);
+        
+            // Check if the key belongs to the modules requiring the ListPage
+            var aListModules = ["IN", "QT", "OR", "LF"];
+            if (aListModules.includes(sKey)) {
+                this._router.navTo("ListPage", { module: sKey });
+            } else {
+                this._router.navTo(sKey);
+            }
         },
+        
   
         _removeSelectionFromAllItems: function() {
             var sideNavItems = this.getView().byId("sideNav").getItems();

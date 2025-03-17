@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="com.exa.alfanar.controller.CustomerUpdate"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="Customer Update">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Label text="Customer ID" />
+                <Input value="{customerData>/selectedCustomer/customerId}" enabled="{= ${customerData>/selectedCustomer/customerId} ? false : true}" />
+                
+                <Label text="Customer Name (English)" />
+                <Input value="{customerData>/selectedCustomer/customerNameEn}" />
+
+                <Label text="Mobile No." />
+                <Input value="{customerData>/selectedCustomer/mobileNo}" />
+
+                <Label text="Country Code" />
+                <Input value="{customerData>/selectedCustomer/countryCode}" />
+
+                <Label text="City" />
+                <Input value="{customerData>/selectedCustomer/city}" />
+
+                <Label text="Sales Organization" />
+                <Input value="{customerData>/selectedCustomer/salesOrg}" />
+
+                <Button text="Save" press="onSaveCustomer" type="Emphasized"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

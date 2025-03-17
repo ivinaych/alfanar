@@ -1,0 +1,78 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    
+    <Dialog
+        title="Filter Customers"
+        class="sapUiContentPadding"
+        contentWidth="30rem">
+        <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="4"
+            labelSpanL="4"
+            labelSpanM="4"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1">
+            <f:content>
+                <Label text="Customer Account Group" />
+                <ComboBox
+                    id="accountGroupFilter"
+                    items="{filterModel>/accountGroups}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+                
+                <Label text="Country" />
+                <ComboBox
+                    id="countryFilter"
+                    items="{filterModel>/countries}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+                
+                <Label text="Sales Organization" />
+                <ComboBox
+                    id="salesOrgFilter"
+                    items="{filterModel>/salesOrgs}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+                
+                <Label text="Distribution Channel" />
+                <ComboBox
+                    id="distChannelFilter"
+                    items="{filterModel>/distChannels}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+                
+                <Label text="Division" />
+                <ComboBox
+                    id="divisionFilter"
+                    items="{filterModel>/divisions}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+                
+                <Label text="Sales Office" />
+                <ComboBox
+                    id="salesOfficeFilter"
+                    items="{filterModel>/salesOffices}">
+                    <core:Item key="{filterModel>key}" text="{filterModel>text}" />
+                </ComboBox>
+            </f:content>
+        </f:SimpleForm>
+        
+        <beginButton>
+            <Button text="Apply" type="Emphasized" press="onApplyFilter" />
+        </beginButton>
+        <endButton>
+            <Button text="Reset" press="onResetFilter" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
