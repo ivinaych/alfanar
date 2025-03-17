@@ -1,0 +1,19 @@
+{
+    "tabStatuses": [
+      {
+        "key": "created",
+        "text": "Created",
+        "count": "345"
+      },
+      {
+        "key": "underReview",
+        "text": "Under Review",
+        "count": "10"
+      },
+      {
+        "key": "cancelled",
+        "text": "Cancelled",
+        "count": "07"
+      }
+    ]
+  }

@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "com/exa/alfanar/model/models"
-], (UIComponent, models) => {
+    "com/exa/alfanar/model/models",
+    "sap/ui/model/json/JSONModel"
+], (UIComponent, models, JSONModel) => {
     "use strict";
 
     return UIComponent.extend("com.exa.alfanar.Component", {
@@ -18,6 +19,8 @@ sap.ui.define([
 
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
+            var oCustomerModel = new JSONModel("model/CustomerData.json");
+            this.setModel(oCustomerModel, "customerData");
 
             // enable routing
             this.getRouter().initialize();

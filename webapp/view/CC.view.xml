@@ -1,0 +1,184 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:l="sap.ui.layout"
+    controllerName="com.exa.alfanar.controller.CC">
+
+    <Page title="Customer Creation" showHeader="true">
+        <headerContent>
+            <Button text="Add Customer" type="Emphasized" press="onAddCustomer" />
+        </headerContent>
+        
+        <content>
+            <!-- Tool Header with Dynamic Tabs -->
+            <tnt:ToolHeader class="sapUiTinyMarginTop sapUiTinyMarginEnd sapUiTinyMarginBegin">
+                <IconTabHeader
+                    id="statusTabHeader"
+                    selectedKey="created"
+                    backgroundDesign="Transparent"
+                    select="onTabSelect"
+                    mode="Inline">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" shrinkable="true" />
+                    </layoutData>
+                    <items>
+                        <!-- Dynamic binding for tabs -->
+                        <IconTabFilter key="{tabStatusModel>key}" text="{tabStatusModel>text}" count="{tabStatusModel>count}" />
+                    </items>
+                </IconTabHeader>
+                
+                <!-- Search and Tool Buttons -->
+                <ToolbarSpacer />
+                <SearchField id="customerSearchField" placeholder="Search Customer name, code, contact no., CR No." width="300px" search="onSearch" liveChange="onSearchLiveChange" />
+                <Button icon="sap-icon://filter" type="Transparent" press="onOpenFilterDialog" />
+            </tnt:ToolHeader>
+            
+            <!-- Customer Data Table with horizontal scrolling and fixed first column -->
+            <ScrollContainer 
+                horizontal="true" 
+                vertical="false" 
+                width="100%" 
+                class="sapUiTinyMargin">
+                <Table
+                    id="customersTable"
+                    items="{customerData>/customers}"
+                    alternateRowColors="true"
+                    growing="false"
+                    fixedLayout="false"
+                    sticky="ColumnHeaders,HeaderToolbar"
+                    class="customerTable sapUiSizeCompact">
+                    <columns>
+                        <!-- Fixed first column (Customer ID) -->
+                        <Column 
+                            hAlign="Center"   
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px"
+                            sticky="true">
+                            <Text text="Customer ID" wrapping="false" />
+                        </Column>
+                        
+                        <Column 
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="180px">
+                            <Text text="Customer Account Group" wrapping="false" />
+                        </Column>
+                        
+                        <Column 
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Request ID" wrapping="false" />
+                        </Column>
+                        
+                        <Column 
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="200px">
+                            <Text text="Customer Name (English)" wrapping="false" />
+                        </Column>
+                        
+                        <Column 
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Country Code" wrapping="false" />
+                        </Column>
+                        
+                        <Column 
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Mobile No." wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Postal Code" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="City" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="150px">
+                            <Text text="Sales Organization" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="160px">
+                            <Text text="Distribution Channel" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Division" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Sales Office" wrapping="false" />
+                        </Column>
+                        
+                        <Column
+                            hAlign="Center"
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="120px">
+                            <Text text="Last Update" wrapping="false" />
+                        </Column>
+                    </columns>
+                    
+                    <items>
+                        <ColumnListItem vAlign="Middle" type="Active">
+                            <cells>
+                                <ObjectIdentifier
+                                    title="{customerData>customerId}"
+                                    class="sapUiTinyMarginCenter customerIdText" />
+                                <Text text="{customerData>customerAccountGroup}" wrapping="false" />
+                                <Text text="{customerData>requestId}" wrapping="false" />
+                                <Text text="{customerData>customerNameEn}" wrapping="false" />
+                                <Text text="{customerData>countryCode}" wrapping="false" />
+                                <Text text="{customerData>mobileNo}" wrapping="false" />
+                                <Text text="{customerData>postalCode}" wrapping="false" />
+                                <Text text="{customerData>city}" wrapping="false" />
+                                <Text text="{customerData>salesOrg}" wrapping="false" />
+                                <Text text="{customerData>Distributionchannel}" wrapping="false" />
+                                <Text text="{customerData>Division}" wrapping="false" />
+                                <Text text="{customerData>SalesOffice}" wrapping="false" />
+                                <Text text="{customerData>lastupdate}" wrapping="false" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,87 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.exa.alfanar.controller.ListPage">
+    <Page title="{pageTitle}">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Title text="{viewModel>/pageTitle}" level="H2"/>
+                </contentLeft>
+                <contentRight>
+                    <DateRangeSelection 
+                        id="DRS1" 
+                        width="220px"  
+                        class="DRS1" 
+                        value="{
+                            'type': 'sap.ui.model.type.DateInterval',
+                            'formatOptions': {
+                                'pattern': 'yyyy/MM/dd'
+                            },
+                            'parts': [
+                                {
+                                    'type': 'sap.ui.model.type.Date',
+                                    'path': '/start'
+                                },
+                                {
+                                    'type': 'sap.ui.model.type.Date',
+                                    'path': '/end'
+                                }
+                            ]
+                        }"
+                        change="handleChange"/>
+                    <Button
+                        text="{viewModel>/Buttontext}"
+                        type="Emphasized"
+                        press=".onCreate"
+                        class="createButton"/>
+                </contentRight>
+            </Bar>
+        </customHeader>
+        <subHeader>
+            <OverflowToolbar>
+                <!-- IconTabBar section -->
+                <IconTabBar id="iconTabBar"
+                    select=".onTabSelect"
+                    expandable="false"
+                    applyContentPadding="false"
+                    upperCase="false"
+                    stretchContentHeight="false"
+                    backgroundDesign="Transparent"
+                    class="sapUiNoMarginTop">
+                </IconTabBar>
+                
+                <ToolbarSpacer/>
+                
+                <!-- SearchField -->
+                <SearchField id="searchField"
+                    placeholder="Search Enquiry ID"
+                    search=".onSearch"
+                    width="250px"/>
+                
+                <!-- Filter and Settings Buttons -->
+                <Button icon="sap-icon://filter" tooltip="Filter" press=".onFilterPress"/>
+                <Button icon="sap-icon://action-settings" tooltip="Settings" press=".onSettingsPress"/>
+            </OverflowToolbar>
+        </subHeader>
+        
+        <content>
+            <Table id="listTable" 
+                growing="true" 
+                class="sapUiMediumMarginTop">
+                <columns>
+                    <Column>
+                        <Text text="Loading..." />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="No data available" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
