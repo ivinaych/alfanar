@@ -1,29 +1,102 @@
 <mvc:View
-    controllerName="com.exa.alfanar.controller.CustomerUpdate"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page title="Customer Update">
+     xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" 
+    controllerName="com.exa.alfanar.controller.CustomerUpdate">
+    
+    <Page title="Customer Details">
+    <customHeader>
+            <Toolbar class="toolBar">
+                <Button
+                    icon="sap-icon://nav-back"
+                    press="onNavBack"
+                />
+                <Title text="Add Customer" />
+                <ToolbarSpacer />
+                <Button
+                    id="submitButton"
+                    text="Submit"
+                    press="onSaveCustomer"
+                    class="customButton"
+                    enabled="{CustomerData>/submitEnabled}"
+                />
+            </Toolbar>
+        </customHeader>
         <content>
-            <VBox class="sapUiSmallMargin">
-                <Label text="Customer ID" />
-                <Input value="{customerData>/selectedCustomer/customerId}" enabled="{= ${customerData>/selectedCustomer/customerId} ? false : true}" />
+            <VBox class="formContainer sapUiSmallMargin">
+                <Text text="Fill Details" class="sectionTitle sapUiMediumMarginBottom"/>
                 
-                <Label text="Customer Name (English)" />
-                <Input value="{customerData>/selectedCustomer/customerNameEn}" />
+                <f:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout">
+                    <f:content>
+                       
+                        <Label text="Customer Type" required="true" />
+                        <ComboBox
+                            id="customerType"
+                            selectedKey="{CustomerData>/selectedCustomer/customerType}"
+                            change="onCustomerTypeChange"
+                            width="100%">
+                            <core:Item key="" text="Select Customer Type" />  <!-- Allows an empty selection -->
+                            <core:Item key="Showroom" text="Showroom" />
+                            <core:Item key="Retailer" text="Retailer" />
+                        </ComboBox>
 
-                <Label text="Mobile No." />
-                <Input value="{customerData>/selectedCustomer/mobileNo}" />
+                        <!-- Customer Account Group Dropdown (Replaced Select with ComboBox) -->
+                        <Label text="Customer Account Group" required="true" />
+                        <ComboBox
+                            id="customerAccountGroup"
+                            selectedKey="{CustomerData>/selectedCustomer/customerAccountGroup}"
+                            change="onAccountGroupChange"
+                            width="100%">
+                            <core:Item key="" text="Select Account Group" />  <!-- Allows an empty selection -->
+                            <core:Item key="B2B" text="B2B" />
+                            <core:Item key="B2C" text="B2C" />
+                        </ComboBox>
 
-                <Label text="Country Code" />
-                <Input value="{customerData>/selectedCustomer/countryCode}" />
+                        <Label text="Customer CR No." required="true" />
+                        <Input id="customerCRNo" value="{CustomerData>/customerCRNo}"/>
+                        
+                        <!-- Attachment (Visible only for B2B) -->
+                        <VBox id="attachmentContainer" visible="{= ${CustomerData>/selectedCustomer/customerAccountGroup} === 'B2B'}">
+                            <Label text="Attachment" required="true" />
+                            <u:FileUploader id="fileUploader" change="onFileSelected"/>
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+                
+                <!-- B2C Form - Visible only when B2C is selected -->
+                <f:SimpleForm
+                    id="b2cForm"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    title="Customer Details"
+                    visible="{= ${CustomerData>/selectedCustomer/customerAccountGroup} === 'B2C'}">
+                    <f:content>
+                        <Label text="Title" required="true" />
+                        <Select id="title" selectedKey="{CustomerData>/title}">
+                            <core:Item key="Mr" text="Mr." />
+                            <core:Item key="Mrs" text="Mrs." />
+                            <core:Item key="Ms" text="Ms." />
+                            <core:Item key="Dr" text="Dr." />
+                        </Select>
 
-                <Label text="City" />
-                <Input value="{customerData>/selectedCustomer/city}" />
-
-                <Label text="Sales Organization" />
-                <Input value="{customerData>/selectedCustomer/salesOrg}" />
-
-                <Button text="Save" press="onSaveCustomer" type="Emphasized"/>
+                        <Label text="Name (English)" />
+                        <Input id="englishName" value="{CustomerData>/selectedCustomer/customerNameEn}" />
+                        
+                        <Label text="Country Code" required="true" />
+                        <Input id="countryCode" value="{CustomerData>/selectedCustomer/countryCode}" />
+                        
+                        <Label text="Mobile No." required="true" />
+                        <Input id="mobileNo" type="Tel" value="{CustomerData>/selectedCustomer/mobileNo}" />
+                        
+                        <Label text="City" required="true" />
+                        <Input id="city" value="{CustomerData>/selectedCustomer/city}" />
+                    </f:content>
+                </f:SimpleForm>
             </VBox>
         </content>
     </Page>

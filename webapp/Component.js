@@ -20,7 +20,7 @@ sap.ui.define([
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
             var oCustomerModel = new JSONModel("model/CustomerData.json");
-            this.setModel(oCustomerModel, "customerData");
+            this.setModel(oCustomerModel, "CustomerData");
 
             // enable routing
             this.getRouter().initialize();

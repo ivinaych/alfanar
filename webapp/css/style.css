@@ -118,3 +118,173 @@
 .sapMColumnHeader {
   height: 1rem !important;  /* Increased height */
 }
+/* Form container and layout */
+.formContainer {
+    padding: 1rem;
+    background-color: white;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: normal;
+}
+
+.radioButtons {
+    margin-bottom: 1rem;
+}
+
+.formFields {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 80%;
+}
+
+.fieldContainer {
+    flex: 1;
+}
+
+.formLabel {
+    margin-bottom: 0.25rem;
+}
+
+.formControl {
+    width: 80% !important;
+    border-radius: 1px !important;
+}
+
+.formControl .sapMInputBaseInner,
+.formControl .sapMSltLabel {
+    border-radius: 1px !important;
+}
+
+.fileUploader .sapMInputBaseInner {
+    border-radius: 4px !important;
+    background-color: white !important;
+}
+
+/* Radio button styling */
+.radioSpacing {
+    margin-right: 2rem;
+}
+
+.radioButtons .sapMRb.sapMRbHasLabel .sapMRbBLabel .sapMLabelTextWrapper {
+    color: #5a6574;
+}
+
+/* Custom button styling */
+.customButton {
+    background-color: #dd6d00;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+.customButton .sapMBtnInner {
+    background-color: #dd6d00 !important;
+    color: white !important;
+    border: none;
+}
+
+/* Page styling */
+.pageBackground {
+    background-color: #fffbf7;
+}
+
+.sapMPage {
+    background-color: #fffbf7;
+}
+
+.sapMPage .sapMPageHeader:not(.sapMIBar-CTX)::after {
+    box-shadow: none;
+}
+
+.toolBar.sapMTB.sapMTBStandard {
+    border: none;
+}
+
+/* Override input styles to match design */
+.sapMInputBaseContentWrapper {
+    border-radius: 4px !important;
+}
+
+.sapMSlt {
+    border-radius: 4px !important;
+}
+.pageBackground {
+    background-color: #f7f7f7;
+}
+
+.toolBar {
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    height: 3rem;
+}
+
+.formContainer {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.sectionTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.formLabel {
+    font-weight: 500;
+}
+
+.formControl {
+    width: 100%;
+}
+
+.fileUploader {
+    width: 100%;
+}
+
+.customButton {
+    background-color: #0854a0;
+    color: #fff;
+    font-weight: 500;
+}
+
+.customButton:hover {
+    background-color: #0a65c2;
+}
+
+/* Status messages */
+.successText {
+    color: #107e3e;
+    font-size: 0.85rem;
+}
+
+.errorText {
+    color: #b00;
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .formFields {
+        flex-direction: column;
+    }
+    
+    .fieldContainer {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

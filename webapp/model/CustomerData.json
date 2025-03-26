@@ -2,8 +2,8 @@
     "customers": [
       {
         "customerId": "C001",
-        "customerAccountGroup": "A1",
-        "requestId": "R123",
+        "customerAccountGroup": "B2B",
+        "requestId": "12341",
         "customerNameEn": "John Doe",
         "countryCode": "US",
         "mobileNo": "+1234567890",
@@ -17,8 +17,8 @@
       },
       {
         "customerId": "C002",
-        "customerAccountGroup": "B2",
-        "requestId": "R124",
+        "customerAccountGroup": "B2B",
+        "requestId": "12342",
         "customerNameEn": "Jane Smith",
         "countryCode": "UK",
         "mobileNo": "+447123456789",
@@ -32,8 +32,8 @@
       },
       {
         "customerId": "CUST001",
-        "customerAccountGroup": "AG001",
-        "requestId": "REQ001",
+        "customerAccountGroup": "B2B",
+        "requestId": "12343",
         "customerNameEn": "John Doe Enterprises",
         "countryCode": "US",
         "mobileNo": "+1 9876543210",
@@ -47,8 +47,8 @@
       },
       {
         "customerId": "CUST002",
-        "customerAccountGroup": "AG002",
-        "requestId": "REQ002",
+        "customerAccountGroup": "B2C",
+        "requestId": "12344",
         "customerNameEn": "Smith Supplies",
         "countryCode": "UK",
         "mobileNo": "+44 1234567890",
@@ -62,8 +62,8 @@
       },
       {
         "customerId": "CUST003",
-        "customerAccountGroup": "AG003",
-        "requestId": "REQ003",
+        "customerAccountGroup": "B2C",
+        "requestId": "12345",
         "customerNameEn": "Alfanar Trading",
         "countryCode": "SA",
         "mobileNo": "+966 543210987",

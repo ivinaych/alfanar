@@ -52,7 +52,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.suite.ui.commons": {}
+        "sap.suite.ui.commons": {},
+        "sap.ui.unified": {}
       }
     },
     "contentDensities": {
@@ -70,10 +71,10 @@
         "type": "sap.ui.model.json.JSONModel"
       },
      
-      "customerData": {
+      "CustomerData": {
         "type": "sap.ui.model.json.JSONModel",
         "settings": {
-          "uri": "model/customerData.json"
+          "uri": "model/CustomerData.json"
         }
       },
 
@@ -155,8 +156,13 @@
           "target": "ListPage"
         },
         {
-          "pattern": "CustomerUpdate",
+          "pattern": "CustomerUpdate/{customerId}",
           "name": "CustomerUpdate",
+          "target": "CustomerUpdate"
+        },
+        {
+          "pattern": "CustomerUpdate",
+          "name": "CustomerAdd",
           "target": "CustomerUpdate"
         }        
       ],

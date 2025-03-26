@@ -42,7 +42,7 @@
                 class="sapUiTinyMargin">
                 <Table
                     id="customersTable"
-                    items="{customerData>/customers}"
+                    items="{CustomerData>/customers}"
                     alternateRowColors="true"
                     growing="false"
                     fixedLayout="false"
@@ -54,8 +54,7 @@
                             hAlign="Center"   
                             minScreenWidth="Tablet"
                             demandPopin="true"
-                            width="120px"
-                            sticky="true">
+                            width="120px">
                             <Text text="Customer ID" wrapping="false" />
                         </Column>
                         
@@ -154,26 +153,37 @@
                             width="120px">
                             <Text text="Last Update" wrapping="false" />
                         </Column>
+                        <Column 
+                            hAlign="Center"   
+                            minScreenWidth="Tablet"
+                            demandPopin="true"
+                            width="80px">
+                            <Text text="Edit" wrapping="false" />
+                        </Column>
                     </columns>
                     
                     <items>
                         <ColumnListItem vAlign="Middle" type="Active">
                             <cells>
                                 <ObjectIdentifier
-                                    title="{customerData>customerId}"
+                                    title="{CustomerData>customerId}"
                                     class="sapUiTinyMarginCenter customerIdText" />
-                                <Text text="{customerData>customerAccountGroup}" wrapping="false" />
-                                <Text text="{customerData>requestId}" wrapping="false" />
-                                <Text text="{customerData>customerNameEn}" wrapping="false" />
-                                <Text text="{customerData>countryCode}" wrapping="false" />
-                                <Text text="{customerData>mobileNo}" wrapping="false" />
-                                <Text text="{customerData>postalCode}" wrapping="false" />
-                                <Text text="{customerData>city}" wrapping="false" />
-                                <Text text="{customerData>salesOrg}" wrapping="false" />
-                                <Text text="{customerData>Distributionchannel}" wrapping="false" />
-                                <Text text="{customerData>Division}" wrapping="false" />
-                                <Text text="{customerData>SalesOffice}" wrapping="false" />
-                                <Text text="{customerData>lastupdate}" wrapping="false" />
+                                <Text text="{CustomerData>customerAccountGroup}" wrapping="false" />
+                                <Text text="{CustomerData>requestId}" wrapping="false" />
+                                <Text text="{CustomerData>customerNameEn}" wrapping="false" />
+                                <Text text="{CustomerData>countryCode}" wrapping="false" />
+                                <Text text="{CustomerData>mobileNo}" wrapping="false" />
+                                <Text text="{CustomerData>postalCode}" wrapping="false" />
+                                <Text text="{CustomerData>city}" wrapping="false" />
+                                <Text text="{CustomerData>salesOrg}" wrapping="false" />
+                                <Text text="{CustomerData>Distributionchannel}" wrapping="false" />
+                                <Text text="{CustomerData>Division}" wrapping="false" />
+                                <Text text="{CustomerData>SalesOffice}" wrapping="false" />
+                                <Text text="{CustomerData>lastupdate}" wrapping="false" />
+                                <Button 
+            icon="sap-icon://edit" 
+            type="Transparent" 
+            press="onEditCustomer" />
                             </cells>
                         </ColumnListItem>
                     </items>
